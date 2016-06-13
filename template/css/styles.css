@@ -1,0 +1,257 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+/** Material Icons **/
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+
+table{
+  margin: 20px;
+}
+table, th, td {
+   border: 1px solid #CFD8DC;
+   text-align: center;
+}
+td:first-child{
+  min-width: 30px;
+}
+tr:first-child{
+  background-color: #0091EA;
+  color:#FFFFFF;
+}
+.table_idauteur, .table_idediteur{
+  min-width: 60px;
+}
+.table_action{
+  min-width: 60px;
+}
+.table_date{
+  min-width: 100px;
+}
+.table_titre{
+  min-width: 110px;
+}
+body {
+  font-family: Roboto;
+  padding-top: 50px;
+  background-image: url('img/Uptown_Ritz.png');
+  background-size: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+nav.navbar{
+}
+label{
+  display: block;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+nav.navbar{
+  background-color: #651FFF;
+  border: 0;
+}
+
+.navbar-inverse .navbar-nav > .active > a{
+  background-color: #6200EA;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li.active > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus{
+  background-color: #6200EA;
+}
+.nav.navbar-nav li a{
+  color:#FFFFFF;
+}
+
+.navbar-inverse .navbar-brand{
+  color:#FFFFFF;
+}
+
+.container{
+}
+.formulaire{
+
+}
+.search{
+}
+.contenu{
+  margin-left: 20px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.login{
+  text-align: center;
+}
+.connect_button{
+  font-size: 17px;
+  background-color: #399986;
+  border: none;
+  width: 200px;
+  height: 50px;
+  margin-top: 30px;
+  color: #FFFFFF;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.connect_button:hover{
+  background-color: #00E676;
+}
+.register{
+  text-align: center;
+}
+a.register_button{
+  display: block;
+  text-decoration: none;
+  margin: 0 auto;
+  text-align: center;
+  color:#FFFFFF;
+  background-color: #DF4254;
+  line-height: 50px;
+
+}
+a.register_button:hover{
+  background-color: #FF1744;
+}
+.register_button{
+  font-size: 17px;
+  background-color: #399986;
+  border: none;
+  width: 200px;
+  height: 50px;
+  margin-top: 30px;
+  color: #FFFFFF;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+input::-webkit-input-placeholder{
+  color: rgba(189, 189 , 189, 0.4);
+}
+.register_button:hover{
+  background-color: #00E676;
+}
+
+.login-register{
+  text-align: center;
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px 0 20px 0;
+  background-color: #FFFFFF;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  margin-bottom: 2px;
+}
+.login-register h1{
+  margin-bottom: 30px;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, textarea:focus, input[type="date"]:focus{
+	outline: none;
+  border-color:#424242;
+}
+
+input[type="text"], input[type="date"],input[type="email"], input[type="password"] {
+  border: 0;
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom: 2px solid #BDBDBD;
+  padding: 2px 0 2px 5px;
+  font-size: 26px;
+  width: 400px;
+  color: #424242;
+  transition: all 0.15s ease;
+}
+
+p.error{
+  color: #FF1744;
+  font-size: 16px;
+}
+.full-page{
+  background-color: #FFFFFF;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  width: 97vw;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.user_edit{
+  opacity: 1;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  text-align: center;
+}
+
+.user_edit form{
+  position: relative;
+  display: inline-block;
+  margin-top: 140px;
+  background-color: #FFFFFF;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  padding: 20px;
+}
+.user_edit.active{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.quit{
+  position: absolute;
+  right: 5px;
+top: 5px;
+}
+
+.user_edit.add_user, .user_edit.add_auteur, .user_edit.add_livre, .user_edit.add_editeur{
+  display: none;
+}
+
+.register_button.add_user, .register_button.add_auteur, .register_button.add_livre, .register_button.add_editeur{
+  margin: 10px;
+}
+
+.material-icons.red{
+  color: #DF4254
+}
+.material-icons.red:hover{
+  color:#FF1744
+}
+
+.material-icons.orange{
+  color:#E25F38;
+}
+.material-icons.orange:hover{
+  color:#FF9800;
+}
+
+.quit i{
+  color: #651FFF;
+}
+
+.quit i:hover{
+  color: #6200EA;
+}
+
+select{
+  height: 67px;
+    font-size: 20px;
+    display: block;
+    border: 0;
+    border-radius: 0px;
+    width: 100%;
+    height: 43px;
+}
