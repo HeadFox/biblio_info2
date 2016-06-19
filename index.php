@@ -300,22 +300,31 @@ if (isset($_SESSION['user']) && $_SESSION['user']) {
       require_once('template/admin.php');
     }
     else{
-    	$sql      	= getSql($action, $search, $connexion);
-    	$sqlResult 	= mysqli_query($connexion, $sql);
-    	$rowCount   = mysqli_num_rows($sqlResult);
-
+      if(isset($method) && $method=="show_book"){
+        $sql = "SELECT * FROM livre WHERE id_auteur=$id";
+        $sqlResult 	= mysqli_query($connexion, $sql);
+        $rowCount   = mysqli_num_rows($sqlResult);
+      }
+      else{
+        $sql      	= getSql($action, $search, $connexion);
+      	$sqlResult 	= mysqli_query($connexion, $sql);
+      	$rowCount   = mysqli_num_rows($sqlResult);
+      }
     // affichage des resultats de la recherche utilisateur
   	if ( isset($rowCount) && $rowCount )  {
   	    while($row = mysqli_fetch_assoc($sqlResult))
   	    {
   	        $result[] 	= $row;
   	    }
-  	    echo getHtmlTable($result,$action);
+  	    echo getHtmlTable($result,$action,$connexion);
   	} else {
   	    echo "pas de résultats";
   	}
     if($action==""){
       $action="auteur";
+    }
+    if(isset($method) && $method=="show_book"){
+      echo '<a class="show_all" href="index.php?action=livre"> Afficher tout les livres</a>';
     }
     if(($action=="livre" || $action=="auteur" || $action=="editeur") && ($_SESSION['user']['niveau']==0 || $_SESSION['user']['niveau']==1)){
       echo '<button class="register_button add_'.$action.'"> Ajouter un '.$action.'</button>';

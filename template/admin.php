@@ -45,7 +45,7 @@ if($_SESSION['user']['niveau'] == 0){
   $rowCount   = mysqli_num_rows($sqlResult);
   if ( isset($rowCount) && $rowCount )  {
     $table = '<table class="contenu">';
-    $table.= '<tr><td>ID</td><td>Identifiant</td><td>Mail</td><td>Mot de Passe</td><td>Action</td></tr>';
+    $table.= '<tr><td>ID</td><td>Identifiant</td><td>Mail</td><td>Table</td><td>Action</td></tr>';
     while($row = mysqli_fetch_assoc($sqlResult))
     {
     	$table.= "<tr>";

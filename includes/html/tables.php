@@ -1,12 +1,20 @@
 <?php
 defined('APP') or die;
-
 /**
- * Affiche un tableau php sous forme de table html
- * @param $array
- * @return html
+ * Récupére le nom de l'auteur à partir de son id
+ * @param $id
+ * @return string
  */
+
+function get_auteur($id,$connect){
+  $sql="SELECT nom FROM auteur WHERE id=$id";
+  $result = mysqli_query($connect, $sql);
+  $object = mysqli_fetch_object($result);
+  $final = $object->nom;
+  return $final;
+}
  if( $action=="auteur" && $method=="delete" && ($_SESSION['user']['niveau'] == 0 || $_SESSION['user']['niveau'] == 1)){
+
    if(isset($confirm) && $confirm=="yes"){
      $sql="DELETE FROM livre WHERE id_auteur=$id";
      mysqli_query($connexion, $sql);
@@ -121,11 +129,16 @@ defined('APP') or die;
  	}
  }
 
-function getHtmlTable($array,$type)
+ /**
+  * Affiche un tableau php sous forme de table html
+  * @param $array,$type
+  * @return html
+  */
+function getHtmlTable($array,$type,$connexion)
 {
 	$table = '<table class="contenu">';
 	if($type=="livre"){
-		$table.= '<tr><td>ID</td><td class="table_idauteur">ID Auteur</td><td class="table_idediteur">ID Editeur</td><td class="table_titre">Titre</td><td>Description</td><td>Couverture</td><td class="table_date">Date de publication</td>';
+		$table.= '<tr><td>ID</td><td class="table_idauteur">Auteur(ID)</td><td class="table_idediteur">ID Editeur</td><td class="table_titre">Titre</td><td>Description</td><td>Couverture</td><td class="table_date">Date de publication</td>';
     if($_SESSION['user']['niveau'] == 0 || $_SESSION['user']['niveau'] == 1){
       $table.='<td class="table_action">Action</td>';
     }
@@ -151,6 +164,10 @@ function getHtmlTable($array,$type)
 		foreach ($item as $key=>$value) {
       if($key=="couverture"){
         $table.="<td><img width='100px' src=./".$value."></a></td>";
+      }
+      elseif($key=="id_auteur"){
+        $nom_auteur = get_auteur($value,$connexion);
+        $table.='<td><a id="show_book" href="index.php?action='.$type.'&method=show_book&id='.$value.'"">'.$nom_auteur.'('.$value.')</a></td>';
       }
       else{
         $table.= "<td>".$value."</td>";

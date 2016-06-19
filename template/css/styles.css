@@ -246,6 +246,11 @@ top: 5px;
   color: #6200EA;
 }
 
+.show_all{
+    display: block;
+    margin: 10;
+}
+
 select{
   height: 67px;
     font-size: 20px;
