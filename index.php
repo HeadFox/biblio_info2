@@ -8,44 +8,44 @@ require_once('includes/configuration.php');
 require_once('includes/header.php');
 
 // reception des variables get, post
-$action2 	= mysqli_real_escape_string($connexion,isset($_POST['action2']) ? $_POST['action2'] : NULL);
-$action 	= mysqli_real_escape_string($connexion,isset($_GET['action']) ? $_GET['action'] : NULL);
-$confirm 	= mysqli_real_escape_string($connexion,isset($_GET['confirm']) ? $_GET['confirm'] : NULL);
+$action2 	= htmlentities(mysqli_real_escape_string($connexion,isset($_POST['action2']) ? $_POST['action2'] : NULL));
+$action 	= htmlentities(mysqli_real_escape_string($connexion,isset($_GET['action']) ? $_GET['action'] : NULL));
+$confirm 	= htmlentities(mysqli_real_escape_string($connexion,isset($_GET['confirm']) ? $_GET['confirm'] : NULL));
 if($action2=="admin"){$action="admin";}
 elseif ($action2=="livre") {$action="livre";}
 elseif ($action2=="auteur") {$action="auteur";}
 elseif ($action2=="editeur") {$action="editeur";}
 
-$method = mysqli_real_escape_string($connexion,isset($_GET['method']) ? $_GET['method'] : NULL);
-$id = mysqli_real_escape_string($connexion,isset($_GET['id']) ? $_GET['id'] : NULL);
+$method = htmlentities(mysqli_real_escape_string($connexion,isset($_GET['method']) ? $_GET['method'] : NULL));
+$id = htmlentities(mysqli_real_escape_string($connexion,isset($_GET['id']) ? $_GET['id'] : NULL));
 
-$login 		= mysqli_real_escape_string($connexion,isset($_POST['login']) ? $_POST['login'] : NULL) ;
-$password 	= mysqli_real_escape_string($connexion,isset($_POST['password']) ? $_POST['password'] : NULL) ;
+$login 		= htmlentities(mysqli_real_escape_string($connexion,isset($_POST['login']) ? $_POST['login'] : NULL)) ;
+$password 	= htmlentities(mysqli_real_escape_string($connexion,isset($_POST['password']) ? $_POST['password'] : NULL)) ;
 
 //Enregistrement
-$login_r		= mysqli_real_escape_string($connexion,isset($_POST['login_register']) ? $_POST['login_register'] : NULL) ;
-$email_r		= mysqli_real_escape_string($connexion,isset($_POST['email_register']) ? $_POST['email_register'] : NULL) ;
-$password_r 	= mysqli_real_escape_string($connexion,isset($_POST['password_register']) ? $_POST['password_register'] : NULL );
-$level_r 	= mysqli_real_escape_string($connexion,isset($_POST['level_register']) ? $_POST['level_register'] : NULL) ;
-$search 	= mysqli_real_escape_string($connexion, isset($_POST['search']) ? $_POST['search'] : NULL) ;
+$login_r		= htmlentities(mysqli_real_escape_string($connexion,isset($_POST['login_register']) ? $_POST['login_register'] : NULL)) ;
+$email_r		= htmlentities(mysqli_real_escape_string($connexion,isset($_POST['email_register']) ? $_POST['email_register'] : NULL)) ;
+$password_r 	= htmlentities(mysqli_real_escape_string($connexion,isset($_POST['password_register']) ? $_POST['password_register'] : NULL ));
+$level_r 	= htmlentities(mysqli_real_escape_string($connexion,isset($_POST['level_register']) ? $_POST['level_register'] : NULL)) ;
+$search 	= htmlentities(mysqli_real_escape_string($connexion, isset($_POST['search']) ? $_POST['search'] : NULL)) ;
 
 //Add auteur
-$nom_r   = mysqli_real_escape_string($connexion,isset($_POST['nom_register']) ? $_POST['nom_register'] : NULL);
-$prenom_r = mysqli_real_escape_string($connexion,isset($_POST['prenom_register']) ? $_POST['prenom_register'] : NULL);
-$date_n_r = mysqli_real_escape_string($connexion,isset($_POST['date_n_register']) ? $_POST['date_n_register'] : NULL);
+$nom_r   = htmlentities(mysqli_real_escape_string($connexion,isset($_POST['nom_register']) ? $_POST['nom_register'] : NULL));
+$prenom_r = htmlentities(mysqli_real_escape_string($connexion,isset($_POST['prenom_register']) ? $_POST['prenom_register'] : NULL));
+$date_n_r = htmlentities(mysqli_real_escape_string($connexion,isset($_POST['date_n_register']) ? $_POST['date_n_register'] : NULL));
 
 //Add editeur
-$nom_e_r   = mysqli_real_escape_string($connexion,isset($_POST['nomediteur_register']) ? $_POST['nomediteur_register'] : NULL);
+$nom_e_r   = htmlentities(mysqli_real_escape_string($connexion,isset($_POST['nomediteur_register']) ? $_POST['nomediteur_register'] : NULL));
 
 //id commun à toute les éditions
-$id_u       = mysqli_real_escape_string($connexion,isset($_POST['id_update']) ? $_POST['id_update'] : NULL) ;
+$id_u       = htmlentities(mysqli_real_escape_string($connexion,isset($_POST['id_update']) ? $_POST['id_update'] : NULL));
 
 //Update editeur
-$nom_e_u   = mysqli_real_escape_string($connexion,isset($_POST['nomediteur_update']) ? $_POST['nomediteur_update'] : NULL);
+$nom_e_u   = htmlentities(mysqli_real_escape_string($connexion,isset($_POST['nomediteur_update']) ? $_POST['nomediteur_update'] : NULL));
 
 //Add livre
-$titre_r    = mysqli_real_escape_string($connexion,isset($_POST['titre_register']) ? $_POST['titre_register'] : NULL);
-$description_r = mysqli_real_escape_string($connexion,isset($_POST['description_register']) ? $_POST['description_register'] : NULL);
+$titre_r    = htmlentities(mysqli_real_escape_string($connexion,isset($_POST['titre_register']) ? $_POST['titre_register'] : NULL));
+$description_r = htmlentities(mysqli_real_escape_string($connexion,isset($_POST['description_register']) ? $_POST['description_register'] : NULL));
 
 //Récupération Image
 if(isset($_FILES['file_register']) || isset($_FILES['file_update'])){
@@ -112,27 +112,27 @@ if(isset($_FILES['file_register']) || isset($_FILES['file_update'])){
   }
 }
 
-$date_r = mysqli_real_escape_string($connexion,isset($_POST['date_register']) ? $_POST['date_register'] : NULL);
-$id_auteur_r = mysqli_real_escape_string($connexion,isset($_POST['id_auteur_register']) ? $_POST['id_auteur_register'] : NULL);
-$id_editeur_r = mysqli_real_escape_string($connexion,isset($_POST['id_editeur_register']) ? $_POST['id_editeur_register'] : NULL);
+$date_r = htmlentities(mysqli_real_escape_string($connexion,isset($_POST['date_register']) ? $_POST['date_register'] : NULL));
+$id_auteur_r = htmlentities(mysqli_real_escape_string($connexion,isset($_POST['id_auteur_register']) ? $_POST['id_auteur_register'] : NULL));
+$id_editeur_r = htmlentities(mysqli_real_escape_string($connexion,isset($_POST['id_editeur_register']) ? $_POST['id_editeur_register'] : NULL));
 
 
 //Mise a jour
-$login_u		= mysqli_real_escape_string($connexion,isset($_POST['login_update']) ? $_POST['login_update'] : NULL) ;
-$email_u		= mysqli_real_escape_string($connexion,isset($_POST['email_update']) ? $_POST['email_update'] : NULL) ;
-$password_u 	= mysqli_real_escape_string($connexion,isset($_POST['password_update']) ? $_POST['password_update'] : NULL) ;
-$level_u 	= mysqli_real_escape_string($connexion,isset($_POST['level_update']) ? $_POST['level_update'] : NULL) ;
+$login_u		= htmlentities(mysqli_real_escape_string($connexion,isset($_POST['login_update']) ? $_POST['login_update'] : NULL)) ;
+$email_u		= htmlentities(mysqli_real_escape_string($connexion,isset($_POST['email_update']) ? $_POST['email_update'] : NULL)) ;
+$password_u 	= htmlentities(mysqli_real_escape_string($connexion,isset($_POST['password_update']) ? $_POST['password_update'] : NULL)) ;
+$level_u 	= htmlentities(mysqli_real_escape_string($connexion,isset($_POST['level_update']) ? $_POST['level_update'] : NULL)) ;
 
 //Mise à jour du livre
-$titre_u    = mysqli_real_escape_string($connexion,isset($_POST['titre_update']) ? $_POST['titre_update'] : NULL);
-$description_u = mysqli_real_escape_string($connexion,isset($_POST['description_update']) ? $_POST['description_update'] : NULL);
-$date_u = mysqli_real_escape_string($connexion,isset($_POST['date_update']) ? $_POST['date_update'] : NULL);
+$titre_u    = htmlentities(mysqli_real_escape_string($connexion,isset($_POST['titre_update']) ? $_POST['titre_update'] : NULL));
+$description_u = htmlentities(mysqli_real_escape_string($connexion,isset($_POST['description_update']) ? $_POST['description_update'] : NULL));
+$date_u = htmlentities(mysqli_real_escape_string($connexion,isset($_POST['date_update']) ? $_POST['date_update'] : NULL));
 
 
 //Mise à jour du auteur
-$nom_u    = mysqli_real_escape_string($connexion,isset($_POST['nom_update']) ? $_POST['nom_update'] : NULL);
-$prenom_u = mysqli_real_escape_string($connexion,isset($_POST['prenom_update']) ? $_POST['prenom_update'] : NULL);
-$date_n_u = mysqli_real_escape_string($connexion,isset($_POST['date_n_update']) ? $_POST['date_n_update'] : NULL);
+$nom_u    = htmlentities(mysqli_real_escape_string($connexion,isset($_POST['nom_update']) ? $_POST['nom_update'] : NULL));
+$prenom_u = htmlentities(mysqli_real_escape_string($connexion,isset($_POST['prenom_update']) ? $_POST['prenom_update'] : NULL));
+$date_n_u = htmlentities(mysqli_real_escape_string($connexion,isset($_POST['date_n_update']) ? $_POST['date_n_update'] : NULL));
 
 //Tentative d'Enregistrement
 if($login_r && $email_r && $password_r ){
