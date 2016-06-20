@@ -260,3 +260,10 @@ select{
     width: 100%;
     height: 43px;
 }
+.search{
+  padding: 10px;
+}
+.search_button{
+  border: 0;
+  background:none;
+}

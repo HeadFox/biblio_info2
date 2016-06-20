@@ -28,7 +28,7 @@
     		echo '<p class="error">Login ou mot de passe incorrect</p>';
     	}
       ?>
-    <form class="login" action="index.php" method="post">
+    <form class="login" action="index.php?action=livre" method="post">
       <p>
         <input name="login" type="text" placeholder="Login"/>
       </p>

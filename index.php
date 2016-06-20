@@ -293,6 +293,7 @@ if (isset($_SESSION['user']) && $_SESSION['user']) {
     <div class="search">
       <form action="index.php?action=<?php echo $action ?>" method="post">
           <input name="search" placeholder="rechercher" type="text"/>
+          <button class="search_button" type="submit"><i class="material-icons">search</i></button>
       </form>
     </div>
     <?php
