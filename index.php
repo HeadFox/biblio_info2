@@ -292,7 +292,7 @@ if (isset($_SESSION['user']) && $_SESSION['user']) {
   ?><div class="full-page">
     <div class="search">
       <form action="index.php" method="post">
-          <input name="search" type="text"/>
+          <input name="search" placeholder="rechercher" type="text"/>
       </form>
     </div>
     <?php
