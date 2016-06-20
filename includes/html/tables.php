@@ -64,7 +64,7 @@ function get_auteur($id,$connect){
  				<textarea name="description_update" rows="10" cols="70"><?php echo $livre_edit['description']?></textarea>
  			</p>
 			<p>
-        <input name="file_update" type="file"/>
+        <input name="file_update" type="file" required/>
 		</p>
  			<p>
  				<input name="date_update" type="date" value="<?php echo $livre_edit['date_publication']?>"/>
