@@ -15,7 +15,6 @@ if($_SESSION['user']['niveau'] == 0){
           <a href="#"class="quit"><i class="material-icons">close</i></a>
           <h1> Edit User </h1>
           <input name="action2" type="hidden" value="admin"/>
-          <input name="id_update" type="text" value='<?php echo $id ?>'/>
           <p>
             <input name="login_update" type="text" value='<?php echo $user_edit['identifiant']?>'/>
           </p>
