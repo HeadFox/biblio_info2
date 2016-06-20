@@ -298,7 +298,7 @@ if (isset($_SESSION['user']) && $_SESSION['user']) {
     </div>
     <?php
     if($action=="admin"){
-      require_once('template/admin.php');
+      require_once('includes/admin.php');
     }
     else{
       if(isset($method) && $method=="show_book"){
@@ -334,7 +334,7 @@ if (isset($_SESSION['user']) && $_SESSION['user']) {
   ?></div><?php
 
 } else { // User non connecté
-  require_once('template/login-register.php');
+  require_once('includes/login-register.php');
 }
 
 // Inclusion fin HTML
