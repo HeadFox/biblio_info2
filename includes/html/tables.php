@@ -163,7 +163,8 @@ function getHtmlTable($array,$type,$connexion)
 		$table.= "<tr>";
 		foreach ($item as $key=>$value) {
       if($key=="couverture"){
-        $table.="<td><img width='100px' src=./".echo str_replace(' ', '%20','$value')." alt="echo str_replace(' ', '%20','$value')"></a></td>";
+        $couv = str_replace(' ', '%20',"$value");
+        $table.="<td><img width='100px' src='./$couv' alt='$couv'></a></td>";
       }
       elseif($key=="id_auteur"){
         $nom_auteur = get_auteur($value,$connexion);
