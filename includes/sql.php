@@ -8,7 +8,7 @@
  * @return string            requete sql
  */
 function getSql($theme, $search, $connexion)
-{
+  {
     $listeNoire = array('utilisateur');
     $sql 		= "SELECT * FROM auteur";
     if($theme && !in_array($theme, $listeNoire)) {
@@ -18,7 +18,12 @@ function getSql($theme, $search, $connexion)
         $sql 		= "SELECT * FROM $table";
     }
     if ($search) {
-        $sql.= " WHERE nom LIKE '%$search%'";
+      if($theme=="auteur"){
+        $sql.= " WHERE nom or prenom LIKE '%$search%'";
+      }
+      elseif ($theme=="livre") {
+        $sql.= " WHERE titre LIKE '%$search%'";
+      }
     }
     return $sql;
 }

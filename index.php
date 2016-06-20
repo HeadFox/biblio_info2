@@ -291,7 +291,7 @@ if (isset($_SESSION['user']) && $_SESSION['user']) {
   require_once('template/menu.php');
   ?><div class="full-page">
     <div class="search">
-      <form action="index.php" method="post">
+      <form action="index.php?action=<?php echo $action ?>" method="post">
           <input name="search" placeholder="rechercher" type="text"/>
       </form>
     </div>
