@@ -137,7 +137,7 @@ $date_n_u = htmlentities(mysqli_real_escape_string($connexion,isset($_POST['date
 //Tentative d'Enregistrement
 if($login_r && $email_r && $password_r ){
   $password_r=md5($password_r);
-  if(isset($level_r) && ($_SESSION['user']['niveau']==0)){
+  if(isset($level_r) && isset($_SESSION['user']) && ($_SESSION['user']['niveau']==0)){
     $sql = "INSERT INTO utilisateur VALUES('','$login_r','$email_r','$password_r',$level_r)";
   }
   else{
@@ -231,7 +231,7 @@ if($login_u && $email_u){
 //Tentative de mise à jour de livre
 if($titre_u && $description_u && $date_u){
   if($_SESSION['user']['niveau']==0 || $_SESSION['user']['niveau']==1){
-    $sql = "UPDATE livre SET titre='$titre_u', description='$description_u', couverture='$target_file', date_publication='$date_u' WHERE id='$id_u'";
+    $sql = "UPDATE livre SET titre='$titre_u', description='$description_u',couverture='$target_file', date_publication='$date_u' WHERE id='$id_u'";
     mysqli_query($connexion, $sql);
     if(mysqli_affected_rows($connexion)==1){
       echo "BRAVO";

@@ -67,13 +67,13 @@ if($_SESSION['user']['niveau'] == 0){
     <h1> Add User </h1>
     <input name="action2" type="hidden" value="admin"/>
     <p>
-      <input name="login_register" type="text" placeholder="Identifiant"/>
+      <input name="login_register" type="text" placeholder="Identifiant" required/>
     </p>
     <p>
-    <input name="email_register" type="email" placeholder="Adresse mail"/>
+    <input name="email_register" type="email" placeholder="Adresse mail" required/>
   </p>
   <p>
-    <input name="password_register" type="password" placeholder="Password"/>
+    <input name="password_register" type="password" placeholder="Password" required/>
   </p>
   <p>
     <select name="level_register" class="level_register">

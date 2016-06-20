@@ -61,10 +61,10 @@ function get_auteur($id,$connect){
  					<input name="titre_update" type="text" value="<?php echo $livre_edit['titre']?>"/>
  				</p>
  				<p>
- 				<textarea name="description_update" rows="10" cols="70"><?php echo $livre_edit['description']?></textarea>
+ 				<textarea name="description_update" rows="10" cols="70"><?php echo $livre_edit['description'] ?></textarea>
  			</p>
 			<p>
-        <input name="file_update" type="file"/>
+        <input name="file_update" type="file" required/>
 		</p>
  			<p>
  				<input name="date_update" type="date" value="<?php echo $livre_edit['date_publication']?>"/>
@@ -189,9 +189,9 @@ function getHtmlTable($array,$type,$connexion)
 <form method="post" action="index.php" enctype="multipart/form-data">
   <a href="#"class="quit"><i class="material-icons">close</i></a>
   <h1> Add <?php echo $action ?> </h1>
-  <input name="action2" type="hidden" value="livre"/>
+  <input name="action2" type="hidden" value="livre" required/>
   <p>
-    <input name="titre_register" type="text" placeholder="Titre du livre"/>
+    <input name="titre_register" type="text" placeholder="Titre du livre" required/>
   </p>
   <p>
     <?php
@@ -229,10 +229,10 @@ function getHtmlTable($array,$type,$connexion)
   <textarea name="description_register" rows="10" cols="70"></textarea>
 </p>
 <p>
-  <input name="file_register" type="file"/>
+  <input name="file_register" type="file" required/>
 </p>
 <p>
-  <input name="date_register" type="date"/>
+  <input name="date_register" type="date" required/>
 </p>
 <p>
   <input type="submit" class="register_button" value="Register">
@@ -246,15 +246,15 @@ function getHtmlTable($array,$type,$connexion)
   <form method="post" action="index.php">
     <a href="#"class="quit"><i class="material-icons">close</i></a>
     <h1> Add <?php echo $action ?> </h1>
-    <input name="action2" type="hidden" value="auteur"/>
+    <input name="action2" type="hidden" value="auteur" required/>
     <p>
-      <input name="nom_register" type="text" placeholder="Nom"/>
+      <input name="nom_register" type="text" placeholder="Nom" required/>
     </p>
     <p>
-      <input name="prenom_register" type="text" placeholder="Prénom"/>
+      <input name="prenom_register" type="text" placeholder="Prénom" required/>
     </p>
   <p>
-    <input name="date_n_register" type="date"/>
+    <input name="date_n_register" type="date" required/>
   </p>
   <p>
     <input type="submit" class="register_button" value="Register">
@@ -268,9 +268,9 @@ function getHtmlTable($array,$type,$connexion)
    <form method="post" action="index.php">
      <a href="#"class="quit"><i class="material-icons">close</i></a>
      <h1> Add <?php echo $action ?> </h1>
-     <input name="action2" type="hidden" value="editeur"/>
+     <input name="action2" type="hidden" value="editeur" required/>
      <p>
-       <input name="nomediteur_register" type="text" placeholder="Nom"/>
+       <input name="nomediteur_register" type="text" placeholder="Nom" required/>
      </p>
    <p>
      <input type="submit" class="register_button" value="Register">
