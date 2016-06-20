@@ -67,7 +67,7 @@ function get_auteur($id,$connect){
         <input name="file_update" type="file"/>
 		</p>
  			<p>
- 				<input name="date_update" type="date" value=<?php echo $livre_edit['date_publication']?>/>
+ 				<input name="date_update" type="date" value="<?php echo $livre_edit['date_publication']?>"/>
  			</p>
  			<p>
  				<input type="submit" class="register_button" value="Update">
